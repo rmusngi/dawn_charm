@@ -124,6 +124,38 @@
         "collection_button_text": "Shop Collection",
         "collection_handle": "frontpage"
       }
+    },
+    "collection_duo_himVXP": {
+      "type": "collection-duo",
+      "blocks": {
+        "collection_block_cUm3eV": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hydrogen",
+            "custom_title": "",
+            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
+            "button_label": "Shop now"
+          }
+        },
+        "collection_block_y3kDQN": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hydrogen",
+            "custom_title": "",
+            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
+            "button_label": "S"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_cUm3eV",
+        "collection_block_y3kDQN"
+      ],
+      "settings": {
+        "heading": "Featured Collections",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -131,6 +163,7 @@
     "collection_wide_c6rw4g",
     "product_carousel_Tf9CQh",
     "collectionbanner_azDQTq",
-    "product_carousel_Nkm6Ac"
+    "product_carousel_Nkm6Ac",
+    "collection_duo_himVXP"
   ]
 }
