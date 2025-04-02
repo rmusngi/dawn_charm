@@ -11,9 +11,9 @@
     • Mobile: 100% of cell width and 300px tall.
 {% endcomment %}
 
-<!-- Flickity CSS & JS from CDN (remove if already included) -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!-- Flickity CSS & JS served from Shopify Assets -->
+<link rel="stylesheet" href="{{ 'flickity.min.css' | asset_url }}">
+<script src="{{ 'flickity.pkgd.min.js' | asset_url }}" defer></script>
 
 <section class="product-carousel-section">
   <div class="product-carousel-container">
@@ -38,7 +38,12 @@
                 <!-- Image Container for uniform size -->
                 <div class="carousel-cell-image">
                   {% if product.featured_image %}
-                    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                    <img
+                      src="{{ product.featured_image | img_url: '1024x1024' }}"
+                      alt="{{ product.title }}"
+                      width="400"
+                      height="600"
+                    >
                   {% endif %}
                 </div>
                 <p class="product-title">{{ product.title }}</p>
@@ -66,6 +71,23 @@
 </section>
 
 <style>
+  /* Remove any unwanted outline/shadow on Flickity elements */
+  .product-carousel,
+  .product-carousel *,
+  .product-carousel .flickity-viewport,
+  .product-carousel .flickity-viewport::before,
+  .product-carousel .flickity-viewport::after,
+  .product-carousel .flickity-slider,
+  .product-carousel .flickity-slider::before,
+  .product-carousel .flickity-slider::after,
+  .product-carousel .flickity-enabled {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    border: none !important;
+  }
+
   .product-carousel-section {
     width: 100%;
     margin: 0;
@@ -115,18 +137,6 @@
   .carousel-cell a {
     color: inherit;
     text-decoration: none;
-  }
-  /* Remove focus outline/shadow from links and Flickity elements */
-  .carousel-cell a:focus,
-  .carousel-cell a:active,
-  .carousel-cell:focus,
-  .carousel-cell:active,
-  .flickity-button:focus,
-  .flickity-button:active,
-  .js-flickity:focus,
-  .js-flickity:active {
-    outline: none !important;
-    box-shadow: none !important;
   }
   /* Image container for uniform size on Desktop: 400x600 (2:3 ratio) */
   .carousel-cell-image {
@@ -192,15 +202,6 @@
   .flickity-page-dots .dot.is-selected {
     background: #333;
   }
-  /* Remove Flickity shadow/outline on carousel elements */
-  .product-carousel .flickity-viewport,
-  .product-carousel .flickity-slider,
-  .product-carousel .flickity-enabled {
-    box-shadow: none !important;
-    outline: none !important;
-    border: none !important;
-    -webkit-box-shadow: none !important;
-  }
   /* Mobile Adjustments */
   @media (max-width: 749px) {
     .collection-button-wrapper {
@@ -215,13 +216,13 @@
     /* On mobile, force the image container to use 100% width and 300px tall */
     .carousel-cell-image {
       width: 100%;
-      height: 500px !important;
+      height: 300px !important;
     }
     /* Hide navigation arrows on mobile */
     .flickity-button {
       display: none !important;
     }
-    /* Remove page dots on mobile */
+    /* Hide page dots on mobile */
     .flickity-page-dots {
       display: none !important;
     }
@@ -244,6 +245,7 @@
         wrapAround: true,
         groupCells: 1, // Advance one cell at a time
         draggable: true,
+        imagesLoaded: false,
       };
     } else {
       options = {
@@ -253,6 +255,7 @@
         prevNextButtons: true,
         wrapAround: true,
         groupCells: 3, // Group 3 slides at a time on desktop
+        imagesLoaded: false,
       };
     }
     new Flickity(carouselElem, options);

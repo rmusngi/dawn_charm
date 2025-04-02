@@ -112,7 +112,6 @@
   }
   .collection-duo-description {
     font-size: 1em;
-    margin: 0.5em 0;
   }
 
   /* Button styling with a background */
@@ -144,6 +143,52 @@
     }
     .collection-duo-item {
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .collection-duo-item {
+      width: 80% !important;
+      margin: 0 auto;
+    }
+    .collection-duo-item-image {
+      width: 100%;
+      aspect-ratio: 2 / 3; /* Maintain a 2:3 ratio */
+      height: auto; /* Let the aspect-ratio set the height */
+    }
+    .collection-duo-title,
+    .collection-duo-button {
+      position: static !important;
+      margin-top: 10px;
+    }
+    .collection-duo-title {
+      font-size: 2em;
+    }
+    .collection-duo-description {
+      font-size: 1em;
+      margin-top: 8px;
+    }
+
+    /* Button styling with a background */
+    .collection-duo-button .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000; /* Change to your desired color */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .collection-duo-button .btn:hover {
+      border: 1px solid #000;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff; /* Change to your desired color */
+      color: #000;
+
+      text-decoration: none;
+      border-radius: 4px;
     }
   }
 </style>

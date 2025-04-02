@@ -74,12 +74,13 @@
   }
   .collection-banner-title {
     margin: 0 0 10px;
-    font-size: 2rem;
+    font-size: 3.5rem;
     line-height: 1.2;
+    font-weight: bold;
   }
   .collection-banner-description {
     margin: 0 0 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.4;
   }
   /* Button styling */
@@ -106,13 +107,26 @@
   }
   /* Responsive Adjustments */
   @media (max-width: 749px) {
+    /* Set banner container to 80% width and center it */
+    .collection-banner {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Adjust banner title and description font sizes as needed */
     .collection-banner-title {
-      font-size: 1.5rem;
+      font-size: 2.5rem; /* adjust this value as needed */
     }
     .collection-banner-description {
-      font-size: 0.9rem;
+      font-size: 1.5rem; /* adjust this value as needed */
     }
-  }
+
+    /* Force the banner image to maintain a 2:3 aspect ratio */
+    .collection-banner-image {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* 2:3 ratio */
+      overflow: hidden;
+    }
 </style>
 
 {% schema %}
