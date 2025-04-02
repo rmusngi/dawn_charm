@@ -15,7 +15,7 @@
         "slide_K8EeBf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg",
+            "image": "shopify://shop_images/runechild_a_blonde_european_woman_sitting_on_a_vintage_couch_in_cf464113-cba7-4350-b953-740a58ff6fb7.png",
             "image_overlay_opacity": 0,
             "heading": "Image slide",
             "heading_size": "hxxl",
@@ -44,126 +44,9 @@
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
-    },
-    "collection_wide_c6rw4g": {
-      "type": "collection-wide",
-      "blocks": {
-        "collection_block_cJJrnB": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        },
-        "collection_block_xQjCbC": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        },
-        "collection_block_Nyb83t": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        },
-        "collection_block_HctGj4": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        },
-        "collection_block_MiHmBn": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        }
-      },
-      "block_order": [
-        "collection_block_cJJrnB",
-        "collection_block_xQjCbC",
-        "collection_block_Nyb83t",
-        "collection_block_HctGj4",
-        "collection_block_MiHmBn"
-      ],
-      "settings": {}
-    },
-    "product_carousel_Tf9CQh": {
-      "type": "product-carousel",
-      "settings": {
-        "heading": "Featured Products",
-        "heading_font_size": 32,
-        "collection_button_text": "Shop Collection",
-        "collection_handle": "frontpage"
-      }
-    },
-    "collectionbanner_azDQTq": {
-      "type": "collectionbanner",
-      "blocks": {
-        "collection_block_7gByqa": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen",
-            "custom_image": "shopify://shop_images/theme_cover_image.jpg",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
-            "button_label": "Shop Now"
-          }
-        }
-      },
-      "block_order": [
-        "collection_block_7gByqa"
-      ],
-      "settings": {}
-    },
-    "product_carousel_Nkm6Ac": {
-      "type": "product-carousel",
-      "settings": {
-        "heading": "Featured Products",
-        "heading_font_size": 32,
-        "collection_button_text": "Shop Collection",
-        "collection_handle": "frontpage"
-      }
-    },
-    "collection_duo_himVXP": {
-      "type": "collection-duo",
-      "blocks": {
-        "collection_block_cUm3eV": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
-            "button_label": "Shop now"
-          }
-        },
-        "collection_block_y3kDQN": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
-            "button_label": "S"
-          }
-        }
-      },
-      "block_order": [
-        "collection_block_cUm3eV",
-        "collection_block_y3kDQN"
-      ],
-      "settings": {
-        "heading": "Featured Collections",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
     }
   },
   "order": [
-    "slideshow_nzfXAd",
-    "collection_wide_c6rw4g",
-    "product_carousel_Tf9CQh",
-    "collectionbanner_azDQTq",
-    "product_carousel_Nkm6Ac",
-    "collection_duo_himVXP"
+    "slideshow_nzfXAd"
   ]
 }
