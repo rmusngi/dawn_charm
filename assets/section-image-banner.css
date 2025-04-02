@@ -144,6 +144,19 @@
 }
 
 @media screen and (max-width: 749px) {
+  .banner--small:not(.banner--adapt) {
+    min-height: 50vh;
+  }
+
+  .banner--medium:not(.banner--adapt) {
+    min-height: 80vh;
+  }
+
+  .banner--large:not(.banner--adapt) {
+    min-width: 100%;
+    min-height: 100vh;
+  }
+
   .banner:not(.banner--stacked) {
     flex-direction: row;
     flex-wrap: wrap;

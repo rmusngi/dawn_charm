@@ -1,0 +1,164 @@
+<section class="collection-banner">
+  <div class="collection-banner-container">
+    {% for block in section.blocks %}
+      {% assign collection = block.settings.collection %}
+      {% if collection %}
+        {% assign hero_image = block.settings.custom_image | default: collection.image %}
+        {% if hero_image %}
+          <div class="collection-banner-item">
+            <!-- Banner Image with fixed 21:9 aspect ratio -->
+            <div class="collection-banner-image">
+              <img
+                src="{{ hero_image | img_url: 'master' }}"
+                alt="{{ collection.title }}"
+              >
+            </div>
+            <!-- Text and Button Under the Image -->
+            <div class="collection-banner-content">
+              <h2 class="collection-banner-title">
+                {{ block.settings.custom_title | default: collection.title }}
+              </h2>
+              {% if block.settings.custom_description != blank %}
+                <p class="collection-banner-description">
+                  {{ block.settings.custom_description }}
+                </p>
+              {% endif %}
+              <div class="collection-banner-button">
+                <a href="{{ collection.url }}" class="btn">
+                  {{ block.settings.button_label }}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  /* Main Section: Full width background if needed */
+  .collection-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  /* Container now limits the width to 1200px and centers content */
+  .collection-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  /* Each banner item takes full container width */
+  .collection-banner-item {
+    margin-top: 64px;
+    margin-bottom: 30px;
+  }
+  /* Banner Image Container: fixed 21:9 aspect ratio, inherits container width */
+  .collection-banner-image {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    overflow: hidden;
+  }
+  .collection-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Content Under the Image */
+  .collection-banner-content {
+    padding: 20px;
+    text-align: left;
+  }
+  .collection-banner-title {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .collection-banner-description {
+    margin: 0 0 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  /* Button styling */
+  .collection-banner-button .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.75rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .collection-banner-button .btn:hover {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.75rem;
+  }
+  /* Responsive Adjustments */
+  @media (max-width: 749px) {
+    .collection-banner-title {
+      font-size: 1.5rem;
+    }
+    .collection-banner-description {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner",
+      "category": "Collection",
+      "blocks": [{ "type": "collection_block" }]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,259 @@
+{% comment %}
+  Product Carousel Section:
+  - Displays up to 25 products (skipping any from the "lookbooks" collection)
+  - Groups cells 5 at a time for carousel navigation
+  - Carousel loops back to the first slide when reaching the end (wrapAround)
+  - Navigation arrows are positioned at the middle of the 400px-tall image container
+  - Page dots are enabled
+  - A collection button is placed after the carousel, now horizontally centered
+  - Product title and price font sizes are adjustable (see comments in CSS)
+  - Product images are forced to be uniform using object-fit: cover
+{% endcomment %}
+
+<!-- Flickity CSS & JS from CDN (remove if your theme already includes Flickity) -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<section class="product-carousel-section">
+  <div class="product-carousel-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="product-carousel-heading" style="font-size: {{ section.settings.heading_font_size }}px;">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% assign source_collection = collections[section.settings.collection_handle] %}
+    {% if source_collection and source_collection.products.size > 0 %}
+      <div
+        class="product-carousel js-flickity"
+        data-flickity='
+          {
+            "cellAlign": "left",
+            "contain": true,
+            "pageDots": true,
+            "prevNextButtons": true,
+            "groupCells": 5,
+            "wrapAround": true
+          }
+        '
+      >
+        {% assign count = 0 %}
+        {% for product in source_collection.products %}
+          {% unless collections.lookbooks.products contains product %}
+            {% assign count = count | plus: 1 %}
+            {% if count > 25 %}
+              {% break %}
+            {% endif %}
+            <div class="carousel-cell">
+              <a href="{{ product.url }}">
+                <!-- Image Container for uniform size -->
+                <div class="carousel-cell-image">
+                  {% if product.featured_image %}
+                    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                  {% endif %}
+                </div>
+                <p class="product-title">{{ product.title }}</p>
+                {% if product.price %}
+                  <p class="product-price">{{ product.price | money }}</p>
+                {% endif %}
+              </a>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No products found.</p>
+    {% endif %}
+  </div>
+  <!-- Collection Button placed after the carousel (after the dots) -->
+  <div class="collection-button-wrapper">
+    {% assign collection_obj = collections[section.settings.collection_handle] %}
+    {% if collection_obj %}
+      <a href="{{ collection_obj.url }}" class="collection-button-link">
+        {{ section.settings.collection_button_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .product-carousel-section {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0;
+  }
+  .product-carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  /* Section Heading styling; adjust via settings */
+  .product-carousel-heading {
+    margin-bottom: 20px;
+  }
+  /* Collection Button styling (after the carousel) */
+  .collection-button-wrapper {
+    margin-top: 80px;
+    text-align: center; /* Center the button horizontally */
+  }
+  .collection-button-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .collection-button-link:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+  /* Flickity carousel styling */
+  .product-carousel {
+    width: 100%;
+  }
+  /* Each slide (cell) */
+  .carousel-cell {
+    width: 240px; /* adjust as desired */
+    margin-right: 10px;
+    text-align: left;
+  }
+  .carousel-cell a {
+    color: inherit;
+    text-decoration: none;
+  }
+  /* Remove focus outline/shadow from links and Flickity elements */
+  .carousel-cell a:focus,
+  .carousel-cell a:active,
+  .carousel-cell:focus,
+  .carousel-cell:active,
+  .flickity-button:focus,
+  .flickity-button:active,
+  .js-flickity:focus,
+  .js-flickity:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  /* Image container for uniform size */
+  .carousel-cell-image {
+    width: 100%;
+    height: 400px; /* Adjust this value for image height */
+    overflow: hidden;
+  }
+  .carousel-cell-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image if too big, scales up if too small */
+    display: block;
+  }
+  /* Product text styling */
+  .product-title {
+    /* Adjust product title font size here */
+    font-size: 2rem; /* <-- Change this value to adjust title size */
+    margin: 0 0 5px;
+    padding: 8px 4px 4px 4px;
+    color: #000;
+    font-weight: 400;
+  }
+  .product-price {
+    /* Adjust product price font size here */
+    font-size: 1.5rem; /* <-- Change this value to adjust price size */
+    color: #000;
+    margin: 0;
+    padding: 0 0 0 4px;
+  }
+  /* Flickity navigation button styling */
+  .flickity-button {
+    position: absolute;
+    top: 200px !important; /* Middle of image if container height is 400px */
+    transform: translateY(-50%);
+    background-color: #fff; /* Default: white background */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 0.8;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+  .flickity-button:hover {
+    cursor: pointer;
+    background-color: #000; /* On hover: black background */
+    opacity: 1;
+  }
+  .flickity-button svg {
+    fill: #000; /* Default: black arrow */
+    transition: fill 0.3s;
+  }
+  .flickity-button:hover svg {
+    fill: #fff; /* On hover: white arrow */
+  }
+  /* Flickity page dots styling */
+  .flickity-page-dots {
+    bottom: -25px;
+  }
+  .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  .flickity-page-dots .dot.is-selected {
+    background: #333;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 749px) {
+    .carousel-cell {
+      width: 150px;
+    }
+    .product-carousel-heading {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Featured Products"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 12,
+      "max": 72,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "collection_button_text",
+      "label": "Collection Button Text",
+      "default": "Shop Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection_handle",
+      "label": "Select Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Carousel",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

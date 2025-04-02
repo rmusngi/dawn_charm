@@ -1,0 +1,107 @@
+<section class="new-additions">
+  <div class="new-additions-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="new-additions-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {%- comment -%}
+      Calculate the timestamp threshold:
+      - new_period (in days) is converted to seconds (days × 86400).
+      - Compare each product’s created_at timestamp to the threshold.
+    {%- endcomment -%}
+    {% assign new_days = section.settings.new_period | plus: 0 %}
+    {% assign seconds_in_days = new_days | times: 86400 %}
+    {% assign now_timestamp = 'now' | date: '%s' | plus: 0 %}
+    {% assign threshold = now_timestamp | minus: seconds_in_days %}
+
+    {%- comment -%}
+      Use the built‑in "all" collection to get every product.
+      (Ensure you have an “all” collection available in your store.)
+    {%- endcomment -%}
+    {% assign my_products = collections.all.products %}
+
+    <div class="new-additions-products">
+      {% for product in my_products %}
+        {% assign product_timestamp = product.created_at | date: '%s' | plus: 0 %}
+        {% if product_timestamp > threshold %}
+          <div class="new-additions-product">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+              {% endif %}
+              <h3>{{ product.title }}</h3>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .new-additions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .new-additions-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .new-additions-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .new-additions-product {
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .new-additions-product img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .new-additions-product h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  @media (max-width: 749px) {
+    .new-additions-product {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "New Additions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "New Additions"
+    },
+    {
+      "type": "range",
+      "id": "new_period",
+      "label": "New Period (day)",
+      "min": 1,
+      "max": 90,
+      "step": 1,
+      "default": 30,
+      "unit": "day"
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Additions",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
