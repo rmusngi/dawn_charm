@@ -380,13 +380,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      ".header-wrapper {position: absolute; width: 100%; background: transparent; transition: background 0.3s ease-in-out, color 0.3s ease-in-out; z-index: 1000; border: none;}",
-      " /* Default state (Transparent Navbar) */.header-wrapper span,#HeaderMenu-collections svg,.header-wrapper .icon, /* Fixed typo from `.header-werapper` to `.header-wrapper` */.header-wrapper .menu-item,.header-wrapper a,#Details-HeaderMenu-3 {color: white !important; /* Navbar text is white */ transition: color 0.3s ease-in-out;}",
-      " /* Dropdown menu */.header__submenu {background: black;}",
-      " /* Scrolled state (White Background) */.header-wrapper.scrolled {background: rgba(255, 255, 255, 1);}",
-      " /* Change text color to black when scrolled */.header-wrapper.scrolled span,.header-wrapper.scrolled #HeaderMenu-collections svg,.header-wrapper.scrolled .icon,.header-wrapper.scrolled .menu-item,.header-wrapper.scrolled a,.header-wrapper.scrolled #Details-HeaderMenu-3 {color: black !important;}",
-      ".header-wrapper.scrolled .header__submenu {background: white;}"
-    ]
+    "custom_css": []
   }
 }
