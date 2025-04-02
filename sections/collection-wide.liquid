@@ -7,7 +7,6 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -23,7 +22,6 @@
       {% if collection != blank and collection.image %}
         <a href="{{ collection.url }}" class="collection-item">
           <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}" width="500" height="500">
-
           <div class="collection-title">{{ collection.title }}</div>
         </a>
       {% endif %}
@@ -103,6 +101,19 @@
   .collection-title a {
     text-decoration: none;
     color: inherit;
+  }
+
+  /* Mobile Adjustments */
+  @media screen and (max-width: 749px) {
+    .collection-container {
+      flex-wrap: wrap;
+      gap: 0; /* Remove gap if desired */
+    }
+    .collection-item {
+      flex: 1 0 100%;
+      width: 100%;
+      height: 33.33vh; /* 1/3 of the viewport height */
+    }
   }
 </style>
 

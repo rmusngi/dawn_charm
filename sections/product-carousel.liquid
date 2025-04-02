@@ -1,16 +1,17 @@
 {% comment %}
   Product Carousel Section:
   - Displays up to 25 products (skipping any from the "lookbooks" collection)
-  - Groups cells 5 at a time for carousel navigation
-  - Carousel loops back to the first slide when reaching the end (wrapAround)
-  - Navigation arrows are positioned at the middle of the 400px-tall image container
-  - Page dots are enabled
-  - A collection button is placed after the carousel, now horizontally centered
-  - Product title and price font sizes are adjustable (see comments in CSS)
-  - Product images are forced to be uniform using object-fit: cover
+  - On desktop: Groups cells 3 at a time with navigation arrows.
+  - On mobile: Displays one slide at a time (with a small peek of the next slide), auto-plays, and arrows are hidden.
+  - Carousel loops (wrapAround) and page dots are enabled on desktop (hidden on mobile).
+  - A collection button is placed below the carousel.
+  - Product title and price font sizes are adjustable.
+  - Product images are forced to a uniform 2:3 aspect ratio.
+    • Desktop: 400px x 600px.
+    • Mobile: 100% of cell width and 300px tall.
 {% endcomment %}
 
-<!-- Flickity CSS & JS from CDN (remove if your theme already includes Flickity) -->
+<!-- Flickity CSS & JS from CDN (remove if already included) -->
 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
@@ -24,19 +25,7 @@
 
     {% assign source_collection = collections[section.settings.collection_handle] %}
     {% if source_collection and source_collection.products.size > 0 %}
-      <div
-        class="product-carousel js-flickity"
-        data-flickity='
-          {
-            "cellAlign": "left",
-            "contain": true,
-            "pageDots": true,
-            "prevNextButtons": true,
-            "groupCells": 5,
-            "wrapAround": true
-          }
-        '
-      >
+      <div class="product-carousel">
         {% assign count = 0 %}
         {% for product in source_collection.products %}
           {% unless collections.lookbooks.products contains product %}
@@ -65,7 +54,7 @@
       <p>No products found.</p>
     {% endif %}
   </div>
-  <!-- Collection Button placed after the carousel (after the dots) -->
+  <!-- Collection Button placed after the carousel (below the dots) -->
   <div class="collection-button-wrapper">
     {% assign collection_obj = collections[section.settings.collection_handle] %}
     {% if collection_obj %}
@@ -89,14 +78,14 @@
     padding: 0 20px;
     box-sizing: border-box;
   }
-  /* Section Heading styling; adjust via settings */
+  /* Section Heading styling; adjustable via settings */
   .product-carousel-heading {
     margin-bottom: 20px;
   }
-  /* Collection Button styling (after the carousel) */
+  /* Collection Button styling */
   .collection-button-wrapper {
     margin-top: 80px;
-    text-align: center; /* Center the button horizontally */
+    text-align: center;
   }
   .collection-button-link {
     display: inline-block;
@@ -119,7 +108,7 @@
   }
   /* Each slide (cell) */
   .carousel-cell {
-    width: 240px; /* adjust as desired */
+    width: 400px; /* Desktop cell width set to match 400px image width */
     margin-right: 10px;
     text-align: left;
   }
@@ -138,42 +127,39 @@
   .js-flickity:active {
     outline: none !important;
     box-shadow: none !important;
-    -webkit-box-shadow: none !important;
   }
-  /* Image container for uniform size */
+  /* Image container for uniform size on Desktop: 400x600 (2:3 ratio) */
   .carousel-cell-image {
-    width: 100%;
-    height: 400px; /* Adjust this value for image height */
+    width: 400px;
+    height: 600px;
     overflow: hidden;
   }
   .carousel-cell-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops image if too big, scales up if too small */
+    object-fit: cover;
     display: block;
   }
   /* Product text styling */
   .product-title {
-    /* Adjust product title font size here */
-    font-size: 2rem; /* <-- Change this value to adjust title size */
+    font-size: 2rem; /* Adjust title font size here */
     margin: 0 0 5px;
     padding: 8px 4px 4px 4px;
     color: #000;
     font-weight: 400;
   }
   .product-price {
-    /* Adjust product price font size here */
-    font-size: 1.5rem; /* <-- Change this value to adjust price size */
+    font-size: 1.5rem; /* Adjust price font size here */
     color: #000;
     margin: 0;
     padding: 0 0 0 4px;
   }
-  /* Flickity navigation button styling */
+  /* Flickity navigation button styling for Desktop */
   .flickity-button {
     position: absolute;
-    top: 200px !important; /* Middle of image if container height is 400px */
+    top: 300px !important; /* Vertical center in 600px tall image container */
     transform: translateY(-50%);
-    background-color: #fff; /* Default: white background */
+    background-color: #fff;
     border: none;
     border-radius: 50%;
     padding: 10px;
@@ -182,15 +168,15 @@
   }
   .flickity-button:hover {
     cursor: pointer;
-    background-color: #000; /* On hover: black background */
+    background-color: #000;
     opacity: 1;
   }
   .flickity-button svg {
-    fill: #000; /* Default: black arrow */
+    fill: #000;
     transition: fill 0.3s;
   }
   .flickity-button:hover svg {
-    fill: #fff; /* On hover: white arrow */
+    fill: #fff;
   }
   /* Flickity page dots styling */
   .flickity-page-dots {
@@ -206,16 +192,72 @@
   .flickity-page-dots .dot.is-selected {
     background: #333;
   }
-  /* Responsive adjustments */
+  /* Remove Flickity shadow/outline on carousel elements */
+  .product-carousel .flickity-viewport,
+  .product-carousel .flickity-slider,
+  .product-carousel .flickity-enabled {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  /* Mobile Adjustments */
   @media (max-width: 749px) {
+    .collection-button-wrapper {
+      margin-top: 20px;
+      text-align: center;
+    }
+    /* Show one slide per view with a small peek of the next slide */
     .carousel-cell {
-      width: 150px;
+      width: calc(100% - 40px) !important;
+      margin-right: 0;
+    }
+    /* On mobile, force the image container to use 100% width and 300px tall */
+    .carousel-cell-image {
+      width: 100%;
+      height: 500px !important;
+    }
+    /* Hide navigation arrows on mobile */
+    .flickity-button {
+      display: none !important;
+    }
+    /* Remove page dots on mobile */
+    .flickity-page-dots {
+      display: none !important;
     }
     .product-carousel-heading {
       font-size: 1.5rem;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var carouselElem = document.querySelector('.product-carousel');
+    var options;
+    if (window.innerWidth < 750) {
+      options = {
+        cellAlign: 'left',
+        contain: true,
+        pageDots: false, // Remove dots on mobile
+        prevNextButtons: false, // Hide arrows on mobile
+        wrapAround: true,
+        groupCells: 1, // Advance one cell at a time
+        draggable: true,
+      };
+    } else {
+      options = {
+        cellAlign: 'left',
+        contain: true,
+        pageDots: true,
+        prevNextButtons: true,
+        wrapAround: true,
+        groupCells: 3, // Group 3 slides at a time on desktop
+      };
+    }
+    new Flickity(carouselElem, options);
+  });
+</script>
 
 {% schema %}
 {
