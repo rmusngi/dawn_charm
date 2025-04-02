@@ -229,10 +229,7 @@
     },
     "collection_duo": {
       "type": "collection-duo",
-      "settings": {
-        "collection_1": "collection-handle-1",
-        "collection_2": "collection-handle-2"
-      }
+      "settings": {}
     }
   },
   "order": [
