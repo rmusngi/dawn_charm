@@ -1,0 +1,206 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="collection-duo">
+  <div class="collection-duo-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="collection-duo-section-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="collection-duo-items">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if collection and collection.image %}
+          <div class="collection-duo-item">
+            <!-- Image -->
+            <div class="collection-duo-item-image">
+              <img
+                src="{{ collection.image | img_url: 'large' }}"
+                alt="{{ collection.title }}"
+              >
+            </div>
+
+            <!-- Title (custom or fallback to collection title) -->
+            <h3 class="collection-duo-title">
+              {{ block.settings.custom_title | default: collection.title }}
+            </h3>
+
+            <!-- Optional description -->
+            {% if block.settings.custom_description != blank %}
+              <p class="collection-duo-description">
+                {{ block.settings.custom_description }}
+              </p>
+            {% endif %}
+
+            <!-- Button linking to the collection -->
+            <div class="collection-duo-button">
+              <a href="{{ collection.url }}" class="btn">
+                {{ block.settings.button_label }}
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Main container: centers content and defines max width */
+  .collection-duo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Section heading inside the container */
+  .collection-duo-section-heading {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  /* Container for collection items: side by side on desktop */
+  .collection-duo-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* Each collection item takes 50% on desktop */
+  .collection-duo-item {
+    width: 50%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  /* Force images to have the same aspect ratio */
+  .collection-duo-item-image {
+    height: 800px;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+  }
+  .collection-duo-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Unique styling for this section's text to override global styles */
+  .collection-duo-title,
+  .collection-duo-description,
+  .collection-duo-button {
+    position: static !important;
+    margin-top: 10px;
+  }
+  .collection-duo-title {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+  .collection-duo-description {
+    font-size: 1em;
+    margin: 0.5em 0;
+  }
+
+  /* Button styling with a background */
+  .collection-duo-button .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000; /* Change to your desired color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  /* Mobile: Stack items vertically */
+  @media screen and (max-width: 749px) {
+    .collection-duo-items {
+      flex-direction: column;
+    }
+    .collection-duo-item {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Duo",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Featured Collections"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title"
+        },
+        {
+          "type": "textarea",
+          "id": "custom_description",
+          "label": "Custom Description"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Duo",
+      "category": "Collection",
+      "blocks": [{ "type": "collection_block" }, { "type": "collection_block" }]
+    }
+  ]
+}
+{% endschema %}

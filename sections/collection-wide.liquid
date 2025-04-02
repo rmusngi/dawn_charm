@@ -1,0 +1,141 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="collection-wide">
+  <div class="collection-container">
+    {% for block in section.blocks %}
+      {% assign collection = block.settings.collection %}
+      {% if collection != blank and collection.image %}
+        <a href="{{ collection.url }}" class="collection-item">
+          <img src="{{ collection.image | img_url: 'large' }}" alt="{{ collection.title }}" width="500" height="500">
+
+          <div class="collection-title">{{ collection.title }}</div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .collection-container {
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100vw; /* Full screen width */
+    overflow: hidden;
+    gap: 2px; /* Adds space between items */
+    margin-bottom: 48px;
+  }
+
+  .collection-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  /* Image Styling */
+  .collection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the space */
+    object-position: center center; /* Centers the image */
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Overlay */
+  .collection-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Initially transparent */
+    transition: background 0.3s ease-in-out;
+  }
+
+  /* Darken image on hover */
+  .collection-item:hover::after {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+  }
+
+  /* Collection Title */
+  .collection-title {
+    position: absolute;
+    bottom: 10px; /* Ensures it stays inside the image */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2; /* Keeps it above the overlay */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Ensure no underline on the link */
+  .collection-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Wide",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Wide",
+      "category": "Collection",
+      "blocks": [
+        { "type": "collection_block" },
+        { "type": "collection_block" },
+        { "type": "collection_block" },
+        { "type": "collection_block" },
+        { "type": "collection_block" },
+        { "type": "collection_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}
