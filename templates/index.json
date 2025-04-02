@@ -96,11 +96,41 @@
         "collection_button_text": "Shop Collection",
         "collection_handle": "frontpage"
       }
+    },
+    "collectionbanner_azDQTq": {
+      "type": "collectionbanner",
+      "blocks": {
+        "collection_block_7gByqa": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hydrogen",
+            "custom_image": "shopify://shop_images/theme_cover_image.jpg",
+            "custom_title": "",
+            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_7gByqa"
+      ],
+      "settings": {}
+    },
+    "product_carousel_Nkm6Ac": {
+      "type": "product-carousel",
+      "settings": {
+        "heading": "Featured Products",
+        "heading_font_size": 32,
+        "collection_button_text": "Shop Collection",
+        "collection_handle": "hydrogen"
+      }
     }
   },
   "order": [
     "slideshow_nzfXAd",
     "collection_wide_c6rw4g",
-    "product_carousel_Tf9CQh"
+    "product_carousel_Tf9CQh",
+    "collectionbanner_azDQTq",
+    "product_carousel_Nkm6Ac"
   ]
 }
