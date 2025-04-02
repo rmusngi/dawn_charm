@@ -87,10 +87,20 @@
         "collection_block_MiHmBn"
       ],
       "settings": {}
+    },
+    "product_carousel_Tf9CQh": {
+      "type": "product-carousel",
+      "settings": {
+        "heading": "Featured Products",
+        "heading_font_size": 32,
+        "collection_button_text": "Shop Collection",
+        "collection_handle": "frontpage"
+      }
     }
   },
   "order": [
     "slideshow_nzfXAd",
-    "collection_wide_c6rw4g"
+    "collection_wide_c6rw4g",
+    "product_carousel_Tf9CQh"
   ]
 }
