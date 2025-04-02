@@ -54,7 +54,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-      {%- for scheme in settings.color_schemes -%}
+      {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
           :root,
@@ -299,9 +299,6 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <div id="preloader">
-      <div class="loader"></div>
-    </div>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -375,15 +372,47 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-    <!-- Preloader Removal Script -->
-    <script>
-      window.addEventListener('load', function () {
-        var preloader = document.getElementById('preloader');
-        if (preloader) {
-          preloader.style.display = 'none';
+    {% if template == 'index' %}
+      <style>
+        .header-wrapper {
+          position: absolute;
+          width: 100%;
+          background: transparent;
+          transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+          z-index: 1000;
+          border: none;
         }
-      });
-    </script>
+        /* Default state (Transparent Navbar) */
+        .header-wrapper span,
+        #HeaderMenu-collections svg,
+        .header-wrapper .icon,
+        .header-wrapper .menu-item,
+        .header-wrapper a,
+        #Details-HeaderMenu-3 {
+          color: white !important;
+          transition: color 0.3s ease-in-out;
+        }
+        /* Dropdown menu */
+        .header__submenu {
+          background: black;
+        }
+        /* Scrolled state (White Background) */
+        .header-wrapper.scrolled {
+          background: rgba(255, 255, 255, 1);
+        }
+        /* Change text color to black when scrolled */
+        .header-wrapper.scrolled span,
+        .header-wrapper.scrolled #HeaderMenu-collections svg,
+        .header-wrapper.scrolled .icon,
+        .header-wrapper.scrolled .menu-item,
+        .header-wrapper.scrolled a,
+        .header-wrapper.scrolled #Details-HeaderMenu-3 {
+          color: black !important;
+        }
+        .header-wrapper.scrolled .header__submenu {
+          background: white;
+        }
+      </style>
+    {% endif %}
   </body>
 </html>

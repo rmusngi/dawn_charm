@@ -1,0 +1,18 @@
+{% assign recommended_collection = collections['my-manual-collection'] %}
+{% if recommended_collection and recommended_collection.products.size > 0 %}
+  <div class="article-recommendations">
+    <h2>Featured Products</h2>
+    <ul>
+      {% for product in recommended_collection.products limit: 4 %}
+        <li>
+          <a href="{{ product.url }}">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            {% endif %}
+            <span>{{ product.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

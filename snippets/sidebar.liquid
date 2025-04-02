@@ -1,0 +1,32 @@
+<!-- sections/sidebar.liquid -->
+<div class="sidebar-blog">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'featured_collection' %}
+        {% if block.settings.featured_collection != blank %}
+          {% assign collection = collections[block.settings.featured_collection] %}
+          {% if collection and collection.products.size > 0 %}
+            <div class="sidebar-featured-collection">
+              <h2>{{ block.settings.title }}</h2>
+              <ul class="collection-products">
+                {% for product in collection.products limit: block.settings.products_to_show %}
+                  <li class="collection-product">
+                    <a href="{{ product.url }}">
+                      {% if product.featured_image %}
+                        <img src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.title }}">
+                      {% endif %}
+                      <span>{{ product.title }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% else %}
+            <p>No products found in the selected collection.</p>
+          {% endif %}
+        {% else %}
+          <p>Please select a collection in the block settings.</p>
+        {% endif %}
+    {% endcase %}
+  {% endfor %}
+</div>
