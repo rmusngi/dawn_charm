@@ -87,10 +87,39 @@
         "collection_block_Qbwy8L"
       ],
       "settings": {}
+    },
+    "product_carousel_m4aD4K": {
+      "type": "product-carousel",
+      "settings": {
+        "heading": "New Additions",
+        "heading_font_size": 41,
+        "collection_button_text": "Shop Collection",
+        "collection_handle": "all"
+      }
+    },
+    "collectionbanner_dtYUaM": {
+      "type": "collectionbanner",
+      "blocks": {
+        "collection_block_tdH9ck": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "custom_title": "",
+            "custom_description": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_tdH9ck"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "slideshow_nzfXAd",
-    "collection_wide_fErYDM"
+    "collection_wide_fErYDM",
+    "product_carousel_m4aD4K",
+    "collectionbanner_dtYUaM"
   ]
 }
