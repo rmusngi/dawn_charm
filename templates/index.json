@@ -104,8 +104,9 @@
           "type": "collection_block",
           "settings": {
             "collection": "",
-            "custom_title": "",
-            "custom_description": "",
+            "custom_image": "shopify://shop_images/runechild_a_young_woman_in_her_mid_20s_wearing_a_cottagecore_dr_dedd084b-45c0-45ef-abb2-4e36bf7138b8.png",
+            "custom_title": "Thread and thistle.",
+            "custom_description": "Perfect for dreamers, wanderers, and lovers of all things slow and sentimental.",
             "button_label": "Shop Now"
           }
         }
@@ -114,12 +115,22 @@
         "collection_block_tdH9ck"
       ],
       "settings": {}
+    },
+    "product_carousel_j33EMB": {
+      "type": "product-carousel",
+      "settings": {
+        "heading": "Featured Products",
+        "heading_font_size": 32,
+        "collection_button_text": "Shop Collection",
+        "collection_handle": ""
+      }
     }
   },
   "order": [
     "slideshow_nzfXAd",
     "collection_wide_fErYDM",
     "product_carousel_m4aD4K",
-    "collectionbanner_dtYUaM"
+    "collectionbanner_dtYUaM",
+    "product_carousel_j33EMB"
   ]
 }
