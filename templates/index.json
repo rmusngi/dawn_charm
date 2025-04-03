@@ -77,6 +77,12 @@
           "settings": {
             "collection": "tops"
           }
+        },
+        "collection_block_kdaKbT": {
+          "type": "collection_block",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
@@ -84,17 +90,41 @@
         "collection_block_UNEXfC",
         "collection_block_T7XCi7",
         "collection_block_gqeyrF",
-        "collection_block_Qbwy8L"
+        "collection_block_Qbwy8L",
+        "collection_block_kdaKbT"
       ],
+      "custom_css": [],
       "settings": {}
     },
-    "product_carousel_m4aD4K": {
-      "type": "product-carousel",
+    "featured_collection_bAbpgY": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center; margin-top: 48px;}"
+      ],
       "settings": {
-        "heading": "New Additions",
-        "heading_font_size": 41,
-        "collection_button_text": "View Collection",
-        "collection_handle": "all"
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "New Additions.",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collectionbanner_dtYUaM": {
@@ -148,7 +178,7 @@
         "padding_bottom": 40
       }
     },
-    "featured_collection_bAbpgY": {
+    "featured_collection_Aci8MQ": {
       "type": "featured-collection",
       "custom_css": [
         "h2 {text-align: center; margin-top: 48px;}"
@@ -156,7 +186,7 @@
       "settings": {
         "collection": "best-sellers",
         "products_to_show": 4,
-        "title": "Our best sellers.",
+        "title": "Our Bestsellers.",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -183,9 +213,9 @@
   "order": [
     "slideshow_nzfXAd",
     "collection_wide_fErYDM",
-    "product_carousel_m4aD4K",
+    "featured_collection_bAbpgY",
     "collectionbanner_dtYUaM",
     "collection_duo_aKcCgy",
-    "featured_collection_bAbpgY"
+    "featured_collection_Aci8MQ"
   ]
 }
