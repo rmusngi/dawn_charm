@@ -116,10 +116,10 @@
       ],
       "settings": {}
     },
-    "product_carousel_j33EMB": {
+    "product_carousel_rDFX9e": {
       "type": "product-carousel",
       "settings": {
-        "heading": "Our Best Sellers",
+        "heading": "Our best sellers.",
         "heading_font_size": 32,
         "collection_button_text": "Shop Collection",
         "collection_handle": "best-sellers"
@@ -163,7 +163,7 @@
     "collection_wide_fErYDM",
     "product_carousel_m4aD4K",
     "collectionbanner_dtYUaM",
-    "product_carousel_j33EMB",
+    "product_carousel_rDFX9e",
     "collection_duo_aKcCgy"
   ]
 }
