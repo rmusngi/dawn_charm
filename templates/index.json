@@ -20,7 +20,7 @@
             "heading": "<strong>Meadow Glow</strong>",
             "heading_size": "hxxl",
             "subheading": "Nature is elegant. Find soft pastels, flowing fabrics and golden sunlights as you capture the essence of spring with our 2025 Spring collection",
-            "button_label": "View all",
+            "button_label": "See our collection",
             "link": "shopify://collections/spring-2025",
             "button_style_secondary": false,
             "show_text_box": false,
@@ -93,7 +93,7 @@
       "settings": {
         "heading": "New Additions",
         "heading_font_size": 41,
-        "collection_button_text": "Shop Collection",
+        "collection_button_text": "View Collection",
         "collection_handle": "all"
       }
     },
@@ -107,7 +107,7 @@
             "custom_image": "shopify://shop_images/runechild_a_young_woman_in_her_mid_20s_wearing_a_cottagecore_dr_dedd084b-45c0-45ef-abb2-4e36bf7138b8.png",
             "custom_title": "Thread and thistle.",
             "custom_description": "Perfect for dreamers, wanderers, and lovers of all things slow and sentimental.",
-            "button_label": "Shop Now"
+            "button_label": "Shop now"
           }
         }
       },
@@ -119,10 +119,42 @@
     "product_carousel_j33EMB": {
       "type": "product-carousel",
       "settings": {
-        "heading": "Featured Products",
+        "heading": "Our Best Sellers",
         "heading_font_size": 32,
         "collection_button_text": "Shop Collection",
-        "collection_handle": ""
+        "collection_handle": "best-sellers"
+      }
+    },
+    "collection_duo_aKcCgy": {
+      "type": "collection-duo",
+      "blocks": {
+        "collection_block_F7Bwna": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "spring-dance-dresses",
+            "custom_title": "Dance in spring.",
+            "custom_description": "Stylish spring dance outfits to jive and vibe around.",
+            "button_label": "See outfits"
+          }
+        },
+        "collection_block_A3yjYd": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "easter-bloom",
+            "custom_title": "Easter bloom.",
+            "custom_description": "Dress for the celebration of new beginnings.",
+            "button_label": "See outfits"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_F7Bwna",
+        "collection_block_A3yjYd"
+      ],
+      "settings": {
+        "heading": "Shop for any occassion.",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
@@ -131,6 +163,7 @@
     "collection_wide_fErYDM",
     "product_carousel_m4aD4K",
     "collectionbanner_dtYUaM",
-    "product_carousel_j33EMB"
+    "product_carousel_j33EMB",
+    "collection_duo_aKcCgy"
   ]
 }
