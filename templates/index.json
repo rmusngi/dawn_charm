@@ -209,6 +209,24 @@
         "padding_bottom": 36
       }
     },
+    "collectionbanner_AmMDhr": {
+      "type": "collectionbanner",
+      "blocks": {
+        "collection_block_jGtx8d": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "custom_title": "",
+            "custom_description": "",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_jGtx8d"
+      ],
+      "settings": {}
+    },
     "custom_liquid_CXcX9m": {
       "type": "custom-liquid",
       "settings": {
@@ -226,6 +244,7 @@
     "collectionbanner_dtYUaM",
     "collection_duo_aKcCgy",
     "featured_collection_Aci8MQ",
+    "collectionbanner_AmMDhr",
     "custom_liquid_CXcX9m"
   ]
 }
