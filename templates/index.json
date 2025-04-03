@@ -44,9 +44,53 @@
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "collection_wide_fErYDM": {
+      "type": "collection-wide",
+      "blocks": {
+        "collection_block_WF9MyU": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "dresses"
+          }
+        },
+        "collection_block_UNEXfC": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "pants-shorts"
+          }
+        },
+        "collection_block_T7XCi7": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "skirts-petticoats"
+          }
+        },
+        "collection_block_gqeyrF": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "sweaters-cardigans"
+          }
+        },
+        "collection_block_Qbwy8L": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "tops"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_WF9MyU",
+        "collection_block_UNEXfC",
+        "collection_block_T7XCi7",
+        "collection_block_gqeyrF",
+        "collection_block_Qbwy8L"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "slideshow_nzfXAd"
+    "slideshow_nzfXAd",
+    "collection_wide_fErYDM"
   ]
 }

@@ -9,10 +9,11 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/Green_and_Purple_Lavender_Beauty_Salon_Logo_1dda8d83-6a88-42ee-ac95-2754bdcc934e.png",
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "inter_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "inter_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -104,12 +105,12 @@
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
     "social_facebook_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "https://instagram.com/heychamrdrops",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https://pinterest.com/heycharmdrops",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
@@ -189,6 +190,28 @@
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
+        }
+      },
+      "scheme-1915b8ff-a1c1-43d9-940d-177c23d0ec62": {
+        "settings": {
+          "background": "#f5efe6",
+          "background_gradient": "linear-gradient(180deg, #F5EFE6 0%, #EADDC8 100%)",
+          "text": "#5a3d2b",
+          "button": "#a67c52",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#a67c52",
+          "shadow": "#bfa58a"
+        }
+      },
+      "scheme-1bc9c3b5-12fe-47b7-8e72-26169c32b4f3": {
+        "settings": {
+          "background": "#2a1f1e",
+          "background_gradient": "linear-gradient(180deg, #2A1F1E 0%, #3B2E2B 100%)",
+          "text": "#eaddc8",
+          "button": "#c4a484",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#c4a484",
+          "shadow": "#5a3d2b"
         }
       }
     }
