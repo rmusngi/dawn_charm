@@ -17,14 +17,7 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
-          }
-        },
-        "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Info",
+            "heading": "About Us",
             "menu": "footer"
           }
         },
@@ -32,22 +25,13 @@
           "type": "text",
           "settings": {
             "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
-          }
-        },
-        "link_list_H9gnNr": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "subtext": "<p>At Charmdrops, our mission is to curate a collection of clothing that embodies the timeless beauty and simplicity of the cottagecore aesthetic. We strive to provide our customers with thoughtfully selected pieces that evoke a sense of nostalgia and connection to nature, allowing them to express their unique style while embracing the tranquility of pastoral life.</p>"
           }
         }
       },
       "block_order": [
         "footer-0",
-        "footer-1",
-        "footer-2",
-        "link_list_H9gnNr"
+        "footer-2"
       ],
       "settings": {
         "color_scheme": "scheme-1",
