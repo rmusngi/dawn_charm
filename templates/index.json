@@ -237,36 +237,12 @@
       ],
       "settings": {}
     },
-    "newsletter_Tw8Jh3": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_KeypxD": {
-          "type": "heading",
-          "settings": {
-            "heading": "Join our Newsletter",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_h8MWzC": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Get a 10% discount on your first order. Receive updates from us about new collections, prmotions, styling tips and more!</p>"
-          }
-        },
-        "email_form_4LqVCC": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_KeypxD",
-        "paragraph_h8MWzC",
-        "email_form_4LqVCC"
-      ],
-      "custom_css": [],
+    "custom_liquid_JhfAzF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "color_scheme": "scheme-1915b8ff-a1c1-43d9-940d-177c23d0ec62",
-        "full_width": true,
+        "custom_liquid": "<div class=\"klaviyo-form-Y48YE4\"></div>",
+        "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -281,6 +257,6 @@
     "collection_duo_aKcCgy",
     "featured_collection_Aci8MQ",
     "collectionbanner_AmMDhr",
-    "newsletter_Tw8Jh3"
+    "custom_liquid_JhfAzF"
   ]
 }

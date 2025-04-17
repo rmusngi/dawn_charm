@@ -221,7 +221,7 @@
       "scheme-1915b8ff-a1c1-43d9-940d-177c23d0ec62": {
         "settings": {
           "background": "#f5efe6",
-          "background_gradient": "linear-gradient(180deg, #F5EFE6 0%, #EADDC8 100%)",
+          "background_gradient": "linear-gradient(180deg, rgba(245, 239, 230, 1), rgba(234, 221, 200, 1) 100%)",
           "text": "#5a3d2b",
           "button": "#a67c52",
           "button_label": "#ffffff",
