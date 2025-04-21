@@ -19,7 +19,7 @@
             "image_overlay_opacity": 20,
             "heading": "<strong>Meadow Glow</strong>",
             "heading_size": "hxxl",
-            "subheading": "Nature is elegant. Find soft pastels, flowing fabrics and golden sunlights as you capture the essence of spring with our 2025 Spring collection",
+            "subheading": "Nature is elegant. Embrace the charm of spring with soft pastels, flowing fabrics, and golden sunlight — a perfect expression of cottagecore fashion in our 2025 Spring Collection.",
             "button_label": "See our collection",
             "link": "shopify://collections/spring-2025",
             "button_style_secondary": false,
@@ -239,7 +239,6 @@
     },
     "custom_liquid_JhfAzF": {
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div class=\"klaviyo-form-Y48YE4\"></div>",
         "color_scheme": "",
