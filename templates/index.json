@@ -77,12 +77,6 @@
           "settings": {
             "collection": "tops"
           }
-        },
-        "collection_block_kdaKbT": {
-          "type": "collection_block",
-          "settings": {
-            "collection": ""
-          }
         }
       },
       "block_order": [
@@ -90,8 +84,7 @@
         "collection_block_UNEXfC",
         "collection_block_T7XCi7",
         "collection_block_gqeyrF",
-        "collection_block_Qbwy8L",
-        "collection_block_kdaKbT"
+        "collection_block_Qbwy8L"
       ],
       "custom_css": [],
       "settings": {}
@@ -99,14 +92,15 @@
     "featured_collection_bAbpgY": {
       "type": "featured-collection",
       "custom_css": [
-        "h2 {text-align: center; margin-top: 48px;}"
+        "h2 {text-align: center; margin-top: 48px;}",
+        "p {text-align: center;}"
       ],
       "settings": {
         "collection": "all",
         "products_to_show": 4,
         "title": "New Additions.",
         "heading_size": "h1",
-        "description": "",
+        "description": "<p><em>Our newest arrivals capture the heart of cottagecore fashion — whimsical silhouettes, soft fabrics, and vintage-inspired details.</em></p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
