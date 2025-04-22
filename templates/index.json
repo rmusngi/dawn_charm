@@ -15,19 +15,19 @@
         "slide_K8EeBf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg",
-            "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "image": "shopify://shop_images/runechild_a_blonde_european_woman_sitting_on_a_vintage_couch_in_cf464113-cba7-4350-b953-740a58ff6fb7.png",
+            "image_overlay_opacity": 20,
+            "heading": "<strong>Meadow Glow</strong>",
             "heading_size": "hxxl",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
+            "subheading": "Nature is elegant. Embrace the charm of spring with soft pastels, flowing fabrics, and golden sunlight — a perfect expression of cottagecore fashion in our 2025 Spring Collection.",
+            "button_label": "See our collection",
+            "link": "shopify://collections/spring-2025",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": ""
+            "color_scheme": "scheme-3"
           }
         }
       },
@@ -45,125 +45,211 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "collection_wide_c6rw4g": {
+    "collection_wide_fErYDM": {
       "type": "collection-wide",
       "blocks": {
-        "collection_block_cJJrnB": {
+        "collection_block_WF9MyU": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "dresses"
           }
         },
-        "collection_block_xQjCbC": {
+        "collection_block_UNEXfC": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "pants-shorts"
           }
         },
-        "collection_block_Nyb83t": {
+        "collection_block_T7XCi7": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "skirts-petticoats"
           }
         },
-        "collection_block_HctGj4": {
+        "collection_block_gqeyrF": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "sweaters-cardigans"
           }
         },
-        "collection_block_MiHmBn": {
+        "collection_block_Qbwy8L": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "tops"
           }
         }
       },
       "block_order": [
-        "collection_block_cJJrnB",
-        "collection_block_xQjCbC",
-        "collection_block_Nyb83t",
-        "collection_block_HctGj4",
-        "collection_block_MiHmBn"
+        "collection_block_WF9MyU",
+        "collection_block_UNEXfC",
+        "collection_block_T7XCi7",
+        "collection_block_gqeyrF",
+        "collection_block_Qbwy8L"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "featured_collection_bAbpgY": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center; margin-top: 48px;}",
+        "p {text-align: center;}"
+      ],
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "New Additions.",
+        "heading_size": "h1",
+        "description": "<p><em>Our newest arrivals capture the heart of cottagecore fashion — whimsical silhouettes, soft fabrics, and vintage-inspired details.</em></p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collectionbanner_dtYUaM": {
+      "type": "collectionbanner",
+      "blocks": {
+        "collection_block_tdH9ck": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "thread-thistle",
+            "custom_image": "shopify://shop_images/runechild_a_young_woman_in_her_mid_20s_wearing_a_cottagecore_dr_dedd084b-45c0-45ef-abb2-4e36bf7138b8.png",
+            "custom_title": "Thread and thistle.",
+            "custom_description": "Perfect for dreamers, wanderers, and lovers of all things slow, sentimental, and steeped in cottagecore charm.",
+            "button_label": "Shop now"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_tdH9ck"
       ],
       "settings": {}
     },
-    "product_carousel_Tf9CQh": {
-      "type": "product-carousel",
+    "custom_liquid_CXcX9m": {
+      "type": "custom-liquid",
       "settings": {
-        "heading": "Featured Products",
-        "heading_font_size": 32,
-        "collection_button_text": "Shop Collection",
-        "collection_handle": "frontpage"
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Feature Banner</title>\n  <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      margin: 0;\n      font-family: Arial, sans-serif;\n      background-color: #faf9f7;\n    }\n\n    .feature-banner {\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      padding: 40px 20px;\n      background-color: #faf9f7;\n      gap: 80px;\n      flex-wrap: wrap;\n    }\n\n    .feature-item {\n      text-align: center;\n      max-width: 200px;\n    }\n\n    .feature-item i {\n      font-size: 20px;\n      margin-bottom: 12px;\n    }\n\n    .feature-title {\n      font-weight: bold;\n      margin-bottom: 8px;\n    }\n\n    .feature-subtext {\n      font-size: 14px;\n      color: #444;\n    }\n  </style>\n</head>\n<body>\n\n<div style=\"background-color: #faf9f7; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 80px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">\n\n  <!-- Free Shipping -->\n  <div style=\"text-align: center; max-width: 200px;\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" style=\"margin-bottom: 12px;\" viewBox=\"0 0 24 24\"><path d=\"M20 8h-3V4H3v13h2a3 3 0 006 0h2a3 3 0 006 0h2v-5l-3-4zM5 15V6h10v9H5zm4 3a1 1 0 11.001-2.001A1 1 0 019 18zm8 0a1 1 0 11.001-2.001A1 1 0 0117 18zm1-3a3 3 0 00-6 0H9a3 3 0 00-6 0H3v-2h2l3 4h12V9l2 3v3h-2z\"/></svg>\n    <div style=\"font-weight: bold; margin-bottom: 8px;\">Free shipping</div>\n    <div style=\"font-size: 14px; color: #444;\">Fast & free shipping on all orders, no minimums</div>\n  </div>\n\n  <!-- Ref Stores / New Products Monthly -->\n  <div style=\"text-align: center; max-width: 200px;\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" style=\"margin-bottom: 12px;\" viewBox=\"0 0 24 24\"><path d=\"M19 3H5a2 2 0 00-2 2v14l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z\"/></svg>\n    <div style=\"font-weight: bold; margin-bottom: 8px;\">Ref stores</div>\n    <div style=\"font-size: 14px; color: #444;\">Discover fresh new products every month</div>\n  </div>\n\n  <!-- Safe Transactions -->\n  <div style=\"text-align: center; max-width: 200px;\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" style=\"margin-bottom: 12px;\" viewBox=\"0 0 24 24\"><path d=\"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 17a6 6 0 110-12 6 6 0 010 12z\"/></svg>\n    <div style=\"font-weight: bold; margin-bottom: 8px;\">Safe Transactions</div>\n    <div style=\"font-size: 14px; color: #444;\">Your payment info is secure with end-to-end encryption</div>\n  </div>\n\n  <!-- Customer Love -->\n  <div style=\"text-align: center; max-width: 200px;\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" style=\"margin-bottom: 12px;\" viewBox=\"0 0 24 24\"><path d=\"M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z\"/></svg>\n    <div style=\"font-weight: bold; margin-bottom: 8px;\">Customer love</div>\n    <div style=\"font-size: 14px; color: #444;\">Reach out via email or our chatbot — we're here for you</div>\n  </div>\n\n</div>\n</body>\n</html>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "collectionbanner_azDQTq": {
-      "type": "collectionbanner",
+    "collection_duo_aKcCgy": {
+      "type": "collection-duo",
       "blocks": {
-        "collection_block_7gByqa": {
+        "collection_block_F7Bwna": {
           "type": "collection_block",
           "settings": {
-            "collection": "hydrogen",
-            "custom_image": "shopify://shop_images/theme_cover_image.jpg",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
+            "collection": "spring-dance-dresses",
+            "custom_title": "Dance in spring.",
+            "custom_description": "Stylish spring dance outfits to jive and vibe around.",
+            "button_label": "See outfits"
+          }
+        },
+        "collection_block_A3yjYd": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "easter-bloom",
+            "custom_title": "Easter bloom.",
+            "custom_description": "Dress for the celebration of new beginnings.",
+            "button_label": "See outfits"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_F7Bwna",
+        "collection_block_A3yjYd"
+      ],
+      "settings": {
+        "heading": "Shop for any occassion.",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection_Aci8MQ": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center; margin-top: 48px;}"
+      ],
+      "settings": {
+        "collection": "best-sellers",
+        "products_to_show": 4,
+        "title": "Our Bestsellers.",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collectionbanner_AmMDhr": {
+      "type": "collectionbanner",
+      "blocks": {
+        "collection_block_jGtx8d": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "tales-from-the-hollow",
+            "custom_image": "shopify://shop_images/runechild_A_young_woman_with_long_wavy_auburn_hair_dressed_in_a_fa7e32f1-5292-42f7-b449-512d4c58090f.png",
+            "custom_title": "Tales from the Hollow",
+            "custom_description": "Whether you're dressing up for a spring picnic or a moonlit gathering, our cottagecore outfits are designed to make everyday moments feel magical.",
             "button_label": "Shop Now"
           }
         }
       },
       "block_order": [
-        "collection_block_7gByqa"
+        "collection_block_jGtx8d"
       ],
       "settings": {}
     },
-    "product_carousel_Nkm6Ac": {
-      "type": "product-carousel",
+    "custom_liquid_JhfAzF": {
+      "type": "custom-liquid",
       "settings": {
-        "heading": "Featured Products",
-        "heading_font_size": 32,
-        "collection_button_text": "Shop Collection",
-        "collection_handle": "frontpage"
-      }
-    },
-    "collection_duo_himVXP": {
-      "type": "collection-duo",
-      "blocks": {
-        "collection_block_cUm3eV": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
-            "button_label": "Shop now"
-          }
-        },
-        "collection_block_y3kDQN": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "hydrogen",
-            "custom_title": "",
-            "custom_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nulla arcu, maximus vehicula lectus volutpat eu. Interdum et malesuada fames ac ante ipsum primis.",
-            "button_label": "S"
-          }
-        }
-      },
-      "block_order": [
-        "collection_block_cUm3eV",
-        "collection_block_y3kDQN"
-      ],
-      "settings": {
-        "heading": "Featured Collections",
+        "custom_liquid": "<div class=\"klaviyo-form-Y48YE4\"></div>",
+        "color_scheme": "",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "slideshow_nzfXAd",
-    "collection_wide_c6rw4g",
-    "product_carousel_Tf9CQh",
-    "collectionbanner_azDQTq",
-    "product_carousel_Nkm6Ac",
-    "collection_duo_himVXP"
+    "collection_wide_fErYDM",
+    "featured_collection_bAbpgY",
+    "collectionbanner_dtYUaM",
+    "custom_liquid_CXcX9m",
+    "collection_duo_aKcCgy",
+    "featured_collection_Aci8MQ",
+    "collectionbanner_AmMDhr",
+    "custom_liquid_JhfAzF"
   ]
 }

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,7 +15,7 @@
         "featured_image": {
           "type": "featured_image",
           "settings": {
-            "image_height": "adapt"
+            "image_height": "medium"
           }
         },
         "title": {
@@ -23,7 +32,8 @@
           }
         },
         "content": {
-          "type": "content"
+          "type": "content",
+          "settings": {}
         }
       },
       "block_order": [
@@ -31,10 +41,52 @@
         "title",
         "share",
         "content"
-      ]
+      ],
+      "settings": {
+        "sidebar_collection": "best-sellers",
+        "sidebar_title": "Featured Collection",
+        "sidebar_products_to_show": 4
+      }
+    },
+    "sidebar_QHQzpK": {
+      "type": "sidebar",
+      "blocks": {
+        "featured_collection_M7zyyX": {
+          "type": "featured_collection",
+          "settings": {
+            "featured_collection": "best-sellers",
+            "title": "You might like these",
+            "products_to_show": 4
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_M7zyyX"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_blog_MPCjFW": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "posts",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "sidebar_QHQzpK",
+    "featured_blog_MPCjFW"
   ]
 }

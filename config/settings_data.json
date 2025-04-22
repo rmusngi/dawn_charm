@@ -9,10 +9,11 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/Green_and_Purple_Lavender_Beauty_Salon_Logo_1dda8d83-6a88-42ee-ac95-2754bdcc934e.png",
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "inter_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "inter_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -103,18 +104,18 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
-    "social_facebook_link": "",
-    "social_instagram_link": "",
+    "social_facebook_link": "https://www.facebook.com/heycharmdrops/",
+    "social_instagram_link": "https://instagram.com/heychamrdrops",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https://pinterest.com/heycharmdrops",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
-    "predictive_search_show_price": false,
+    "predictive_search_show_price": true,
     "currency_code_enabled": true,
     "cart_type": "notification",
     "show_vendor": false,
@@ -135,6 +136,37 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "13768625480086291342": {
+        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#eaddc8",
+          "secondary_color": "#2a1f1e",
+          "ternary_color": "#6A6A6A",
+          "button_icon": "question_mark",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": ""
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "pagefly-page-builder": {
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -189,6 +221,28 @@
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
+        }
+      },
+      "scheme-1915b8ff-a1c1-43d9-940d-177c23d0ec62": {
+        "settings": {
+          "background": "#f5efe6",
+          "background_gradient": "linear-gradient(180deg, rgba(245, 239, 230, 1), rgba(234, 221, 200, 1) 100%)",
+          "text": "#5a3d2b",
+          "button": "#a67c52",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#a67c52",
+          "shadow": "#bfa58a"
+        }
+      },
+      "scheme-1bc9c3b5-12fe-47b7-8e72-26169c32b4f3": {
+        "settings": {
+          "background": "#2a1f1e",
+          "background_gradient": "linear-gradient(180deg, #2A1F1E 0%, #3B2E2B 100%)",
+          "text": "#eaddc8",
+          "button": "#c4a484",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#c4a484",
+          "shadow": "#5a3d2b"
         }
       }
     }
@@ -381,12 +435,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".header-wrapper {position: absolute; width: 100%; background: transparent; transition: background 0.3s ease-in-out, color 0.3s ease-in-out; z-index: 1000; border: none;}",
-      " /* Default state (Transparent Navbar) */.header-wrapper span,#HeaderMenu-collections svg,.header-wrapper .icon, /* Fixed typo from `.header-werapper` to `.header-wrapper` */.header-wrapper .menu-item,.header-wrapper a,#Details-HeaderMenu-3 {color: white !important; /* Navbar text is white */ transition: color 0.3s ease-in-out;}",
-      " /* Dropdown menu */.header__submenu {background: black;}",
-      " /* Scrolled state (White Background) */.header-wrapper.scrolled {background: rgba(255, 255, 255, 1);}",
-      " /* Change text color to black when scrolled */.header-wrapper.scrolled span,.header-wrapper.scrolled #HeaderMenu-collections svg,.header-wrapper.scrolled .icon,.header-wrapper.scrolled .menu-item,.header-wrapper.scrolled a,.header-wrapper.scrolled #Details-HeaderMenu-3 {color: black !important;}",
-      ".header-wrapper.scrolled .header__submenu {background: white;}"
+      ".blog-sidebar {margin-left: 48px;}"
     ]
   }
 }
