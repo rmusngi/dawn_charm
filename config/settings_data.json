@@ -434,8 +434,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      ".blog-sidebar {margin-left: 48px;}"
-    ]
+    "custom_css": []
   }
 }
