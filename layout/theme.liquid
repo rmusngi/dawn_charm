@@ -54,6 +54,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
+      {% assign scheme_classes = '' %}
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
@@ -144,7 +145,7 @@
         --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
         --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
         --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --collection-card-shadow-vertical-offset: {{ settings.collection_card_vertical_offset | divided_by: 10.0 }}rem;
         --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
 
         --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
@@ -253,6 +254,17 @@
           font-size: 1.6rem;
         }
       }
+
+      /* Custom CSS for blog sidebar margin */
+      .blog-sidebar {
+        margin: 48px;
+      }
+
+      @media screen and (min-width: 750px) {
+        .blog-articles.blog-articles--collage > *:not(:nth-child(3n + 1)):not(:nth-child(3n + 2):last-child) {
+          margin-left: 16px;
+        }
+      }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -296,6 +308,31 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- if template contains 'product' -%}
+      <!-- Pinterest Rich Pins metadata -->
+      <meta property="og:type" content="product">
+      <meta property="og:title" content="{{ product.title | strip_html | escape }}">
+      <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html | escape }}">
+      <meta property="og:price:currency" content="{{ shop.currency }}">
+      <meta property="og:availability" content="{% if product.available %}instock{% else %}outofstock{% endif %}">
+      <meta
+        property="product:price:amount"
+        content="{{ product.price | money_without_currency | strip_html | escape }}"
+      >
+      <meta property="product:price:currency" content="{{ shop.currency }}">
+      <meta property="product:availability" content="{% if product.available %}instock{% else %}outofstock{% endif %}">
+      <meta property="product:retailer_item_id" content="{{ product.id }}">
+      {%- if product.description != blank -%}
+        <meta property="og:description" content="{{ product.description | strip_html | escape | truncatewords: 50 }}">
+      {%- endif -%}
+      {%- if product.featured_image -%}
+        <meta property="og:image" content="{{ product.featured_image | img_url: 'original' }}">
+        <meta property="og:image:secure_url" content="{{ product.featured_image | img_url: 'original' }}">
+        <meta property="og:image:width" content="{{ product.featured_image.width }}">
+        <meta property="og:image:height" content="{{ product.featured_image.height }}">
+      {%- endif -%}
+    {%- endif -%}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
